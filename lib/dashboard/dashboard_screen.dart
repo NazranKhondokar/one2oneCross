@@ -1,5 +1,6 @@
 import 'package:easy_sidemenu/easy_sidemenu.dart';
 import 'package:flutter/material.dart';
+import 'package:one2one/course/course_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key, required this.title}) : super(key: key);
@@ -47,7 +48,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     maxWidth: 150,
                   ),
                   child: Image.asset(
-                    'assets/images/easy_sidemenu.png',
+                    'images/easy_sidemenu.png',
                   ),
                 ),
                 const Divider(
@@ -78,15 +79,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Users',
+                title: 'Course',
                 onTap: () {
                   page.jumpToPage(1);
                 },
-                icon: const Icon(Icons.supervisor_account),
+                icon: const Icon(Icons.download),
               ),
               SideMenuItem(
                 priority: 2,
-                title: 'Files',
+                title: 'Exam',
                 onTap: () {
                   page.jumpToPage(2);
                 },
@@ -94,11 +95,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               SideMenuItem(
                 priority: 3,
-                title: 'Download',
+                title: 'Teacher',
                 onTap: () {
                   page.jumpToPage(3);
                 },
-                icon: const Icon(Icons.download),
+                icon: const Icon(Icons.supervisor_account),
               ),
               SideMenuItem(
                 priority: 4,
@@ -129,11 +130,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ),
                 ),
+                CourseScreen(),
                 Container(
                   color: Colors.white,
                   child: const Center(
                     child: Text(
-                      'Users',
+                      'Exam',
                       style: TextStyle(fontSize: 35),
                     ),
                   ),
@@ -142,16 +144,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   color: Colors.white,
                   child: const Center(
                     child: Text(
-                      'Files',
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                ),
-                Container(
-                  color: Colors.white,
-                  child: const Center(
-                    child: Text(
-                      'Download',
+                      'Teacher',
                       style: TextStyle(fontSize: 35),
                     ),
                   ),
